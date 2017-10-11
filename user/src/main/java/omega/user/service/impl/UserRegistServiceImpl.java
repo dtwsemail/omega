@@ -3,13 +3,16 @@ package omega.user.service.impl;
 import omega.lang.constants.EnumErrorCode;
 import omega.lang.constants.EnumUserLoginStatus;
 import omega.lang.utils.DateUtil;
+import omega.lang.utils.EncryptUtils;
 import omega.lang.utils.PreconditionUtil;
 import omega.lang.utils.SerialUtil;
 import omega.user.dal.dao.UserBaseInfoDao;
 import omega.user.dal.dao.UserLoginInfoDao;
 import omega.user.dal.model.UserBaseInfo;
 import omega.user.dal.model.UserLoginInfo;
+import omega.user.service.UserInfoSearchService;
 import omega.user.service.UserRegistService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,19 +23,29 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class UserRegistServiceImpl implements UserRegistService {
 
+
+    @Autowired
+    private UserInfoSearchService userInfoSearchService;
+    
     @Autowired
     private UserBaseInfoDao userBaseInfoDao;
 
     @Autowired
     private UserLoginInfoDao userLoginInfoDao;
-
+    
 
     @Override
     @Transactional
     public void registByMobile(String mobile, String pwd ) {
 
+    	
+		boolean isExists = userInfoSearchService.checkUserExistsByMobile(mobile);
+		PreconditionUtil.checkState(!isExists, "用户已注册",EnumErrorCode.VALIDATE_ERROR_EXCEPTION);
+		
+		String encryptPwd = EncryptUtils.encryptByMD5(pwd);
+		
         UserBaseInfo userBaseInfo = addUserBaseInfo(mobile);
-        addUserLoginInfo(mobile, pwd, userBaseInfo);
+        addUserLoginInfo(mobile, encryptPwd, userBaseInfo);
     }
 
 

@@ -5,7 +5,8 @@ package omega.lang.constants;
 public enum EnumErrorCode {
     UNEXPECTED_EXCEPTION("030000", "系统预期外异常"),
     DB_EXCEPTION("030001", "数据库操作异常"),
-    SYS_RECORD_EXCEPTION("030002", "系统数据记录异常"),;
+    SYS_RECORD_EXCEPTION("030002", "系统数据记录异常"),
+    VALIDATE_ERROR_EXCEPTION("030003","校验失败");
 
 
     /**

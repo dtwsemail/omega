@@ -9,4 +9,6 @@ public interface UserBaseInfoDao {
     int insert(UserBaseInfo info);
 
     UserBaseInfo selectByUserId(String userId);
+
+	UserBaseInfo selectByMobile(String mobile);
 }

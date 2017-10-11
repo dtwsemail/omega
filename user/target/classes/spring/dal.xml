@@ -27,7 +27,7 @@
 
     <!-- 自动扫描 包下的Mapper接口,并实现其功能 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="stock.history.dal.mapper.**"/>
+        <property name="basePackage" value="omega.user.dal.mapper.**"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
