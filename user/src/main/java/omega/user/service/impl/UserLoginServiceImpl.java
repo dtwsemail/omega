@@ -1,6 +1,7 @@
 package omega.user.service.impl;
 
 
+import omega.lang.common.utils.PreconditionUtil;
 import omega.user.dal.dao.UserLoginInfoDao;
 import omega.user.dal.model.UserLoginInfo;
 import omega.user.service.UserLoginService;
@@ -25,6 +26,8 @@ public class UserLoginServiceImpl implements UserLoginService {
         }
 
         UserLoginInfo loginInfo = userLoginInfoDao.selectByLoginNameAndPwd(loginName, loginPwd);
+        
+        PreconditionUtil.checkNotNull(loginInfo, "用户名或密码错误");
         return loginInfo;
     }
 

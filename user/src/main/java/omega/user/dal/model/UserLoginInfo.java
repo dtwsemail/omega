@@ -3,6 +3,7 @@ package omega.user.dal.model;
 import java.util.Date;
 
 public class UserLoginInfo {
+	
     private String id;
 
     private String userNo;
