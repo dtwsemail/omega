@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/infra/infra.iml" filepath="$PROJECT_DIR$/infra/infra.iml" />
       <module fileurl="file://$PROJECT_DIR$/lang/lang.iml" filepath="$PROJECT_DIR$/lang/lang.iml" />
       <module fileurl="file://$PROJECT_DIR$/market/market.iml" filepath="$PROJECT_DIR$/market/market.iml" />
-      <module fileurl="file://$PROJECT_DIR$/market/market-facade.iml" filepath="$PROJECT_DIR$/market/market-facade.iml" />
       <module fileurl="file://$PROJECT_DIR$/omega.iml" filepath="$PROJECT_DIR$/omega.iml" />
       <module fileurl="file://$PROJECT_DIR$/user/user.iml" filepath="$PROJECT_DIR$/user/user.iml" />
       <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
