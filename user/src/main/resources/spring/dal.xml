@@ -6,10 +6,10 @@
 
     <!-- 读取jdbc.properties文件，配置数据源 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
-        <property name="driverClassName" value="${driverClassName}"/>
-        <property name="url" value="${url}"/>
-        <property name="username" value="${username}"/>
-        <property name="password" value="${password}"/>
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
         <property name="initialSize" value="60"/><!-- 初始化连接数量 -->
         <property name="maxActive" value="100"/><!-- 最大连接数量 -->
         <property name="minIdle" value="10"/><!-- 最小空闲连接数量 -->

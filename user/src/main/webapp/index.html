@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("input").keyup(function(){
+			
+			var rowData = {
+				"mobile":"13616504160",
+				"password":"abc"
+			};
+		
+		     $.ajax({
+                type : 'post',
+                url : 'http://localhost:8080/omega_user/userRegist/registByMobilel',
+                dataType : 'json',
+　　　　　　　		　contentType : 'application/json',
+                data : JSON.stringify(rowData),
+                beforeSend : function () {
+                    // ....
+                },
+                success : function (data) { // 返回的RequestResult的json对象
+                    console.log(data);
+                },
+            });
+	});
+});
+</script>
+</head>
+<body>
+
+<p>在以下输入框中输入名字:</p>
+第一个名称:
+<input type="text" />
+<p>匹配项: <span></span></p>
+<p>该实例的PHP代码 (<a href="demo_ajax_gethint.txt" target="_blank">demo_ajax_gethint</a>) </p>
+
+</body>
+</html>

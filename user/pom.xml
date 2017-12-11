@@ -8,21 +8,27 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>user</artifactId>
-	
+
 	<packaging>war</packaging>
 
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>com.omega</groupId>
 			<artifactId>lang</artifactId>
 		</dependency>
 
-         <dependency>
-               <groupId>org.springframework</groupId>
-               <artifactId>spring-webmvc</artifactId>
-          </dependency>
-		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-redis</artifactId>
+			<version>1.0.2.RELEASE</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
@@ -97,31 +103,38 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>javax.servlet</groupId>
-		    <artifactId>javax.servlet-api</artifactId>
-		    <version>3.0.1</version>
-		    <scope>provided</scope>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.8</version>
+		</dependency>
+
 	</dependencies>
 
 
 	<build>
 		<finalName>omega_user</finalName>
 		<plugins>
-<!-- 			<plugin> -->
-<!-- 				编译器插件，可以指定JDK版本，项目编码等 -->
-<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 				<artifactId>maven-compiler-plugin</artifactId> -->
-<!-- 				<version>3.1</version> -->
-<!-- 				<configuration> -->
-<!-- 					<source>1.8</source> -->
-<!-- 					<target>1.8</target> -->
-<!-- 					<encoding>UTF8</encoding> -->
-<!-- 					<showWarnings>true</showWarnings> -->
-<!-- 				</configuration> -->
-<!-- 			</plugin> -->
+			<!-- <plugin> -->
+			<!-- 编译器插件，可以指定JDK版本，项目编码等 -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-compiler-plugin</artifactId> -->
+			<!-- <version>3.1</version> -->
+			<!-- <configuration> -->
+			<!-- <source>1.8</source> -->
+			<!-- <target>1.8</target> -->
+			<!-- <encoding>UTF8</encoding> -->
+			<!-- <showWarnings>true</showWarnings> -->
+			<!-- </configuration> -->
+			<!-- </plugin> -->
 
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
